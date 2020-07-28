@@ -1380,6 +1380,17 @@ bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc \
 
 USER root
 
+###########################################################################
+# Joe's Own Editor
+###########################################################################
+
+ARG INSTALL_JOE=false
+
+RUN if [ ${INSTALL_JOE} = true ]; then \
+    apt-get update -yqq && \
+    apt-get install -yqq joe \
+;fi
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
